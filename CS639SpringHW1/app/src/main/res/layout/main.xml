@@ -1,5 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     class="com.pace.cs639spring.hw1.AnimalDisplayFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<!-- Radio group of animal images -->
+    <RadioGroup
+        android:id="@+id/colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/bird_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/bird"
+            android:button="@null"
+            android:onClick="FragmentSwitcher" />
+
+        <RadioButton
+
+            android:id="@+id/dog_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/dog"
+            android:onClick="FragmentSwitcher"
+            android:button="@null"/>
+
+        <RadioButton
+            android:id="@+id/cat_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/cat"
+            android:layout_margin="20dp"
+            android:onClick="FragmentSwitcher"
+            android:button="@null"/>
+
+
+    </RadioGroup>
+
+<!-- fragment where the animal info is populated -->
+    <fragment
+        android:name="com.pace.cs639spring.hw1.empty_fragment"
+        android:layout_width="200dp"
+        android:layout_height="380dp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:id="@+id/fragment"
+        android:button="@null">
+
+    </fragment>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/colorpicker"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/colors"
+        android:textStyle="bold"/>
+
+<!-- Radio group of color palette -->
+    <RadioGroup
+        android:id="@+id/colors_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp">
+
+        <RadioButton
+            android:id="@+id/color_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color1"
+            android:button="@null"
+            android:onClick="colorsetter"/>
+        <RadioButton
+            android:id="@+id/color_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color2"
+            android:button="@null"
+            android:onClick="colorsetter"/>
+        <RadioButton
+            android:id="@+id/color_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color3"
+            android:button="@null"
+            android:onClick="colorsetter"/>
+        <RadioButton
+            android:id="@+id/color_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color4"
+            android:button="@null"
+            android:onClick="colorsetter"/>
+        <RadioButton
+            android:id="@+id/color_5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@color/color5"
+            android:button="@null"
+            android:onClick="colorsetter"/>
+    </RadioGroup>
+
+
+
+
+</RelativeLayout>

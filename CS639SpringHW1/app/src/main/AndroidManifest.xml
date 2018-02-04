@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".bird_fragment" />
+        <activity android:name=".dog_fragment" />
+        <activity android:name=".cat_activity" />
+        <activity android:name=".empty_fragment"></activity>
     </application>
 
 </manifest>

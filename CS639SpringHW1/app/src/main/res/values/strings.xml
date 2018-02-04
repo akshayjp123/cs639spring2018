@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CS639SpringHW1</string>
+    <string name="bird_desc">This is a bird description. and birds can fly anywhere in this world</string>
+    <string name="dog_desc">Dog is mans best friend. Dogs are emotionally connected tothe Humans</string>
+    <string name="cat_desc">Cats are very cunning. They do not care about the owners. All they want is food.</string>
+    <string name="colorpicker">COLOR PICKER</string>
 </resources>
