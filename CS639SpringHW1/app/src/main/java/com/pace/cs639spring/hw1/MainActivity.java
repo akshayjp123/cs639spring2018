@@ -108,12 +108,19 @@ public class MainActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void colorsetter(View v) {
 
+        int status= -1;
+
         RadioGroup mAnimals= findViewById(R.id.colors);
         RadioGroup mColors= findViewById(R.id.colors_x);
 
-        int status= mAnimals.getCheckedRadioButtonId();
+        status= mAnimals.getCheckedRadioButtonId();
         int colorStatus= mColors.getCheckedRadioButtonId();
 
+        if (status== -1){
+            //no item selected toasts message to select animal
+            Toast toast=Toast.makeText(getApplicationContext(),"Please Select an animal first",Toast.LENGTH_SHORT);
+            toast.show();
+        }
 
         // if bird is selected
         if(status== R.id.bird_img){
@@ -187,11 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 cat.setBackgroundTintList(colours);
             }
         }
-        else {
-            //no item selected toasts message to select animal
-            Toast toast=Toast.makeText(getApplicationContext(),"Please Select an animal first",Toast.LENGTH_SHORT);
-            toast.show();
-        }
+
 
     }
 
