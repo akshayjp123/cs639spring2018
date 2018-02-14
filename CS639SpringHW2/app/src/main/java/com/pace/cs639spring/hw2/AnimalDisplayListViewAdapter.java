@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.pace.cs639spring.hw2;
 
 import android.app.Activity;
@@ -67,16 +68,46 @@ public class AnimalDisplayListViewAdapter extends BaseAdapter {
     @Override
     public int getCount() {
         return mDataItem.size();
+=======
+package com.pace.cs639spring.hw2.cs639springhw2;
+
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+/**
+ * Created by kachi on 2/7/18.
+ */
+
+public class AnimalDisplayListViewAdapter extends BaseAdapter {
+    @Override
+    public int getCount() {
+        return 0;
+>>>>>>> origin/master
     }
 
     @Override
     public Object getItem(int position) {
+<<<<<<< HEAD
         return mDataItem.get(position);
+=======
+        return null;
+>>>>>>> origin/master
     }
 
     @Override
     public long getItemId(int position) {
+<<<<<<< HEAD
         return mDataItem.indexOf(getItem(position));
     }
 
+=======
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
+    }
+>>>>>>> origin/master
 }
