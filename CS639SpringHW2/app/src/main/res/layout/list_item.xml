@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_margin="10dp"
+        android:id="@+id/animal_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/bird"
+        android:contentDescription="@string/todo" />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/animal_fact_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:text="@string/this_is_a_trial_funfact"
+        android:gravity="center_vertical"
+        android:layout_toEndOf="@+id/animal_image"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/next_fact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_fact"
+        android:layout_alignParentEnd="true"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+    <Button
+        android:id="@+id/delete_fact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_fact"
+        android:layout_below="@+id/next_fact_button"
+        android:layout_alignParentEnd="true"
+        android:focusableInTouchMode="false"
+        android:focusable="false"/>
+
+</RelativeLayout>

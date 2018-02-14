@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CS639SpringHW2</string>
+    <string name="please_enter_the_animal_fact">Please enter the animal fact</string>
+    <string name="next_fact">Next Fact</string>
+    <string name="this_is_a_trial_funfact">This is a trial funfact</string>
+    <string name="delete_fact">Delete Fact</string>
+    <string name="todo">TODO</string>
+    <string name="enter_the_fact_to_add_to_animal">Enter the Fact to add to animal</string>
+    <string name="add_fact">Add Fact</string>
+    <string name="delete_fact_alert">Fact Deleted</string>
+    <string name="add_fact_alert">this was last fact</string>
+    <string name="new_fact_alert">new Fact added</string>
+    <string name="max_fact_alert">you can add only 5 facts</string>
+</resources>
