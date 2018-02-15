@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 package com.pace.cs639spring.hw2;
 
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,104 +10,77 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class AnimalDisplayListViewAdapter extends BaseAdapter {
-
-    Context mContext;
-    ArrayList<DataItem> mDataItem= new ArrayList<DataItem>();
-    LayoutInflater mInflater;
-
-    public AnimalDisplayListViewAdapter(Context mContext, ArrayList<DataItem> mDataItem) {
-        this.mContext = mContext;
+    private LayoutInflater mInflater;
+    private List<DataItem> mDataItem;
+    private View.OnClickListener onClickListener;
+    private int mSelectedPosition= -1;
+    //Adapter Constructor
+    AnimalDisplayListViewAdapter(Context mContext, ArrayList<DataItem> mDataItem, View.OnClickListener onClickListener) {
+        Context mContext1 = mContext;
         this.mDataItem= mDataItem;
-        mInflater= LayoutInflater.from(this.mContext);
+        this.onClickListener= onClickListener;
+        this.mInflater= LayoutInflater.from(mContext);
     }
-
+    //a view holder to point to the data in the DataItem
     private class ViewHolder{
         ImageView mImageView;
         TextView mTextView;
         Button mNextFact;
         Button mDeleteFact;
-
-        public  ViewHolder(View item){
+        ViewHolder(View item){
             mImageView= (ImageView) item.findViewById(R.id.animal_image);
             mTextView= (TextView) item.findViewById(R.id.animal_fact_placeholder);
             mNextFact= (Button) item.findViewById(R.id.next_fact_button);
             mDeleteFact= (Button) item.findViewById(R.id.delete_fact_button);
-
+            mNextFact.setOnClickListener(onClickListener);
+            mDeleteFact.setOnClickListener(onClickListener);
             mNextFact.setFocusable(false);
             mDeleteFact.setFocusable(false);
         }
     }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         ViewHolder viewHolder= null;
-
         // for reuse of views
         if (convertView== null){
-            convertView= mInflater.inflate(R.layout.list_item, parent, false);
+            convertView = mInflater.inflate(R.layout.list_item, null);
             viewHolder= new ViewHolder(convertView);
             convertView.setTag(viewHolder);
-        }
-        else viewHolder= (ViewHolder) convertView.getTag();
-
-        //fill data
+        }else viewHolder= (ViewHolder) convertView.getTag();
         DataItem item= (DataItem) getItem(position);
-        viewHolder.mTextView.setText(item.getmFact());
+        //Attaching the data to the viewHolder
+        viewHolder.mTextView.setText(String.format("%s\n%s", item.getmName(), item.getmFacts()));
+        viewHolder.mTextView.setVisibility(mSelectedPosition== position? View.VISIBLE: View.GONE);
         viewHolder.mImageView.setImageResource(item.getmImageId());
-
+        viewHolder.mImageView.setColorFilter(item.getmColorFilter(), PorterDuff.Mode.SRC_IN);
+        viewHolder.mNextFact.setTag(position);
+        viewHolder.mNextFact.setVisibility(viewHolder.mTextView.getVisibility());
+        viewHolder.mDeleteFact.setTag(position);
+        viewHolder.mDeleteFact.setVisibility(viewHolder.mNextFact.getVisibility());
         return convertView;
     }
-
+    //Function to to set the position of the clicked row on list view
+    void setmSelectedPosition(int position){
+        mSelectedPosition= position;
+    }
+    //Function to get the position of the clicked item
+    int getSelectedPosition(){
+        return mSelectedPosition;
+    }
     @Override
     public int getCount() {
         return mDataItem.size();
-=======
-package com.pace.cs639spring.hw2.cs639springhw2;
-
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-
-/**
- * Created by kachi on 2/7/18.
- */
-
-public class AnimalDisplayListViewAdapter extends BaseAdapter {
-    @Override
-    public int getCount() {
-        return 0;
->>>>>>> origin/master
     }
-
     @Override
     public Object getItem(int position) {
-<<<<<<< HEAD
         return mDataItem.get(position);
-=======
-        return null;
->>>>>>> origin/master
     }
-
     @Override
     public long getItemId(int position) {
-<<<<<<< HEAD
         return mDataItem.indexOf(getItem(position));
     }
-
-=======
-        return 0;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
-    }
->>>>>>> origin/master
 }

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 package com.pace.cs639spring.hw2;
-=======
-package com.pace.cs639spring.hw2.cs639springhw2;
->>>>>>> origin/master
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;

@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+    <!-- animal item listview -->
     <ListView
         android:id="@+id/animal_list_layout"
         android:layout_width="match_parent"
@@ -12,6 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"/>
 
+    <!-- field to enter new fact to add to animal -->
     <EditText
         android:id="@+id/add_new_fact"
         android:layout_width="match_parent"
@@ -22,6 +25,7 @@
         android:inputType="text"
         android:imeOptions="actionDone"/>
 
+    <!-- button to add fact to animal -->
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -31,7 +35,8 @@
         android:layout_alignParentEnd="true"
         android:text="@string/add_fact" />
 
-    <RadioGroup
+    <!-- color picker layout -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -39,28 +44,28 @@
         android:orientation="horizontal"
         android:id="@+id/radioGroup">
 
-        <RadioButton
+        <View
             android:id="@+id/color_1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/color1"
             android:button="@null" />
 
-        <RadioButton
+        <View
             android:id="@+id/color_2"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/color2"
             android:button="@null"/>
 
-        <RadioButton
+        <View
             android:id="@+id/color_3"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/color3"
             android:button="@null"/>
 
-        <RadioButton
+        <View
             android:id="@+id/color_4"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -68,12 +73,12 @@
             android:button="@null"
             />
 
-        <RadioButton
+        <View
             android:id="@+id/color_5"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@color/color5"
             android:button="@null"/>
-    </RadioGroup>
+    </LinearLayout>
 
 </RelativeLayout>
