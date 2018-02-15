@@ -1,4 +1,11 @@
 
+/*
+ * Created by Akshay J Patil on 15/2/18 6:39 PM
+ * Copyright (c) 2018. All Rights Reserved.
+ *
+ * Last Modified 15/2/18 6:39 PM
+ */
+
 package com.pace.cs639spring.hw2;
 
 import android.content.Context;
@@ -12,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class AnimalDisplayListViewAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
